@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PrimeNG } from 'primeng/config';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,16 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'quick-quote';
+  constructor(private primeng: PrimeNG) {}
+  changeThemeValue: boolean = false;
+
+  ngOnInit() {
+      this.primeng.ripple.set(true);
+  }
+
+
+  changeTheme() {
+    const element = document.querySelector('html');
+    element!.classList.toggle('dark');
+  }
 }
