@@ -1,0 +1,40 @@
+.background {
+    position: fixed;
+    background: rgba(36, 36, 36, 0.85);
+    backdrop-filter: blur(20px);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    animation: fadeInFromNone 0.3s ease-out;
+    .loading-content {
+        top: 50%;
+        position: absolute;
+        width: 100%;
+        margin-top: calc((300px / 2) * -1);
+        .image {
+            img {
+                height: 200px;
+                display: block;
+                margin: 0 auto;
+            }
+        }
+        .message {
+            text-align: center;
+            font-size: 16px;
+            font-weight: 500;
+            color: #fff;
+        }
+    }
+}
+
+@-webkit-keyframes fadeInFromNone {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}

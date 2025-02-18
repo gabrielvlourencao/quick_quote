@@ -11,6 +11,8 @@ import { InputMaskModule } from 'primeng/inputmask';
 import { TextareaModule } from 'primeng/textarea';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { EditorModule } from 'primeng/editor';
+import { FileUploadModule } from 'primeng/fileupload';
+import { ToastModule } from 'primeng/toast';
 
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { providePrimeNG } from 'primeng/config';
@@ -21,6 +23,9 @@ import Aura from '@primeng/themes/aura';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormComponent } from './form/form.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { MessageService } from 'primeng/api';
+import { LoadingFullScreenComponent } from './shared/loaders/loading-full-screen.component';
 
 const preset = definePreset(Aura, {
   semantic: {
@@ -43,7 +48,8 @@ const preset = definePreset(Aura, {
 @NgModule({
   declarations: [
     AppComponent,
-    FormComponent
+    FormComponent,
+    LoadingFullScreenComponent
   ],
   imports: [
     CommonModule,
@@ -61,9 +67,13 @@ const preset = definePreset(Aura, {
     InputMaskModule,
     TextareaModule,
     InputNumberModule,
-    EditorModule
+    EditorModule,
+    FileUploadModule,
+    ToastModule,
+    HttpClientModule,
   ],
   providers: [
+    MessageService,
     provideAnimationsAsync(),
     providePrimeNG({
       ripple: true,
