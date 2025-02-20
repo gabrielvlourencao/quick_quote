@@ -70,12 +70,13 @@
     </div>
 
     <div class="col-12 text-end mt-4">
-        <p-button type="submit" label="Emitir Orçamento" icon="pi pi-check" class="p-button-success" (onClick)="submitForm()"></p-button>
+        <p-button label="Emitir Orçamento" icon="pi pi-check" class="p-button-success" [disabled]="generatingQuote" (onClick)="submitForm()"></p-button>
     </div>
 </form>
 
 <p-toast />
 
-@if(generatingQuote){
+@if (generatingQuote) {
     <app-loading-full-screen [message]="'Gerando orçamento...'"></app-loading-full-screen>
+    <app-ads></app-ads>
 }

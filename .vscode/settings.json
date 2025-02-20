@@ -1,0 +1,11 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "",
+    "appService.deploySubpath": ".",
+    "appService.connections": [
+        
+    ]
+}

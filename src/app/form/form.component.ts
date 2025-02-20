@@ -17,6 +17,7 @@ export class FormComponent implements OnInit {
   quoteForm!: FormGroup;
   generatingQuote: boolean = false;
 
+
   constructor(private fb: FormBuilder, private sassService: SaasUtilsService, private messageService: MessageService) { }
 
   ngOnInit(): void {
@@ -38,7 +39,7 @@ export class FormComponent implements OnInit {
 
   submitForm(): void {
     if (this.quoteForm.valid) {
-      this.generateQuote();
+      this.showAdsToContinue();
     } else {
       this.quoteForm.markAllAsTouched();
       this.showToast("error", "Erro", "Por favor preencha os campos necessários!");
@@ -60,9 +61,14 @@ export class FormComponent implements OnInit {
     return request;
   }
 
-  generateQuote() {
+  showAdsToContinue(){
     this.generatingQuote = true;
+    setTimeout(() => {
+      this.generateQuote();
+    }, 10000);
+  }
 
+  generateQuote() {
     const request = this.buildRequestWithFormValues();
 
     this.sassService.generateQuote(request)

@@ -13,7 +13,6 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { EditorModule } from 'primeng/editor';
 import { FileUploadModule } from 'primeng/fileupload';
 import { ToastModule } from 'primeng/toast';
-
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { providePrimeNG } from 'primeng/config';
 import { AppRoutingModule } from './app-routing.module';
@@ -23,9 +22,10 @@ import Aura from '@primeng/themes/aura';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormComponent } from './form/form.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { MessageService } from 'primeng/api';
 import { LoadingFullScreenComponent } from './shared/loaders/loading-full-screen.component';
+import { AdsComponent } from './shared/ads/ads.component';
 
 const preset = definePreset(Aura, {
   semantic: {
@@ -49,7 +49,8 @@ const preset = definePreset(Aura, {
   declarations: [
     AppComponent,
     FormComponent,
-    LoadingFullScreenComponent
+    LoadingFullScreenComponent,
+    AdsComponent
   ],
   imports: [
     CommonModule,

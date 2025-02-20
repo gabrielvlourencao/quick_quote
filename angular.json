@@ -34,6 +34,7 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/assets",
+              "src/web.config",
               {
                 "glob": "**/*",
                 "input": "public"
@@ -49,8 +50,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5MB"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -94,6 +95,7 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/assets",
+              "src/web.config",
               {
                 "glob": "**/*",
                 "input": "public"
