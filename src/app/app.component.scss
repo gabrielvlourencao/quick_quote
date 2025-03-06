@@ -1,24 +1,9 @@
-.main {
+footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-
-    .heading{
-        margin-top: 2em;
-    }
-
-}
-.form {
-    width: 50%;
-    margin-left: 2em;
-    margin-right: 2em;
-    margin-top: 2em;
-    margin-bottom: 2em;
-}
-
-@media screen and (max-width: 768px) {
-    .title{
-        font-size: medium!important;
-    }
+    text-align: center;
 }

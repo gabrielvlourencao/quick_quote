@@ -1,0 +1,39 @@
+<div class="main">
+    <div class="heading">
+        <h1 class="title text-4xl font-extrabold leading-none tracking-tight">Crie um orçamento rápido e fácil!</h1>
+    </div>
+    <div class="content flex-wrap gap-8 flex mt-8">
+        <div class="flex-auto">
+            <p-button label="Começe já!" [rounded]="true" severity="danger" size="large" [routerLink]="['/budget']" />
+        </div>
+        <div class="flex-auto">
+            <p-button label="Buy me a coffe!" [rounded]="true" severity="help" size="large"
+                (click)="handlePaymentDialog()" />
+        </div>
+        <div class="flex-auto">
+            <p-button label="Sobre mim!" [rounded]="true" severity="info" size="large"
+                (click)="redirectTo('https://gabrielvlourencao.github.io/gabriel-lourencao.github.io/')" />
+        </div>
+    </div>
+</div>
+
+<p-dialog header="Apoie meu trabalho!" [modal]="true" [(visible)]="paymentDialogVisible" [style]="{ width: '25rem' }">
+    <span class="p-text-secondary block mb-8">Se gostou do produto e deseja deixar um agradecimento, deixarei a chave
+        Pix abaixo. Qualquer valor é bem-vindo! ☺️</span>
+    <div class="flex justify-center gap-4 mb-4">
+        <p-chip class="mr-5 mt-1" label="Chave pix" icon="pi pi-key" (click)="copyToClipboard(this.pixKey)" />
+        <p-chip class="other mr-5 mt-1" label="Portfolio" icon="pi pi-briefcase"
+            (click)="redirectTo('https://gabrielvlourencao.github.io/gabriel-lourencao.github.io/')" />
+    </div>
+</p-dialog>
+
+<footer>
+    <p-chip class="mr-5 mt-1" label="Gabriel Lourenção" image="./assets/images/Gabriel.jpeg" alt="Avatar image"
+        (click)="redirectTo('https://gabrielvlourencao.github.io/gabriel-lourencao.github.io/')" />
+    <p-chip class="mr-5" label="Linkedin" icon="pi pi-linkedin"
+        (click)="redirectTo('https://www.linkedin.com/in/gabriel-louren%C3%A7%C3%A3o/')" />
+    <p-chip class="mr-5" label="Github" icon="pi pi-github"
+        (click)="redirectTo('https://github.com/gabrielvlourencao')" />
+</footer>
+
+<p-toast />

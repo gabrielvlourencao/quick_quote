@@ -1,0 +1,29 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center
+}
+
+
+p-chip:hover{
+    background-color: #d3dbdb;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .title{
+        font-size: medium!important;
+    }
+}

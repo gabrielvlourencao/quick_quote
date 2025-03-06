@@ -12,6 +12,7 @@ import { TextareaModule } from 'primeng/textarea';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { EditorModule } from 'primeng/editor';
 import { FileUploadModule } from 'primeng/fileupload';
+import { ChipModule } from 'primeng/chip';
 import { ToastModule } from 'primeng/toast';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { providePrimeNG } from 'primeng/config';
@@ -21,11 +22,14 @@ import { definePreset } from '@primeng/themes';
 import Aura from '@primeng/themes/aura';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FormComponent } from './form/form.component';
+import { FormComponent } from './budget/form/form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MessageService } from 'primeng/api';
 import { LoadingFullScreenComponent } from './shared/loaders/loading-full-screen.component';
 import { AdsComponent } from './shared/ads/ads.component';
+import { BudgetComponent } from './budget/budget.component';
+import { MainComponent } from './main/main.component';
+import { DialogModule } from 'primeng/dialog';
 
 const preset = definePreset(Aura, {
   semantic: {
@@ -50,7 +54,9 @@ const preset = definePreset(Aura, {
     AppComponent,
     FormComponent,
     LoadingFullScreenComponent,
-    AdsComponent
+    AdsComponent,
+    BudgetComponent,
+    MainComponent
   ],
   imports: [
     CommonModule,
@@ -71,6 +77,8 @@ const preset = definePreset(Aura, {
     EditorModule,
     FileUploadModule,
     ToastModule,
+    ChipModule,
+    DialogModule,
     HttpClientModule,
   ],
   providers: [

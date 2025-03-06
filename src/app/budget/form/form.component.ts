@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { SaasUtilsService } from '../../services/saas-utils.service';
-import { GenerateQuoteRequest } from '../../services/models/generate-quote-request';
+import { SaasUtilsService } from '../../../services/saas-utils.service';
+import { GenerateQuoteRequest } from '../../../services/models/generate-quote-request';
 import { HttpResponse } from '@angular/common/http';
-import { DownloadHelper } from '../../services/helpers/download-helper';
+import { DownloadHelper } from '../../../services/helpers/download-helper';
 import { MessageService } from 'primeng/api';
 import { finalize } from 'rxjs';
 
