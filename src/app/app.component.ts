@@ -27,7 +27,7 @@ export class AppComponent {
       },
       {
         label: 'Orçamento',
-        icon: 'pi-pen-to-square',
+        icon: 'pi pi-pen-to-square',
         command: () => {
           this.router.navigate(['/budget']);
         }

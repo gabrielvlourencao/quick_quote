@@ -16,14 +16,28 @@ footer {
     text-align: center
 }
 
-
-p-chip:hover{
+p-chip:hover {
     background-color: #d3dbdb;
     cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {
-    .title{
-        font-size: medium!important;
+    .title {
+        font-size: 22px !important;
+    }
+
+    .content {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer_content {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 2em;
     }
 }

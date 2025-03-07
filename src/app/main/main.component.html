@@ -28,12 +28,19 @@
 </p-dialog>
 
 <footer>
-    <p-chip class="mr-5 mt-1" label="Gabriel Lourenção" image="./assets/images/Gabriel.jpeg" alt="Avatar image"
-        (click)="redirectTo('https://gabrielvlourencao.github.io/gabriel-lourencao.github.io/')" />
-    <p-chip class="mr-5" label="Linkedin" icon="pi pi-linkedin"
-        (click)="redirectTo('https://www.linkedin.com/in/gabriel-louren%C3%A7%C3%A3o/')" />
-    <p-chip class="mr-5" label="Github" icon="pi pi-github"
-        (click)="redirectTo('https://github.com/gabrielvlourencao')" />
+    <div class="footer_content flex flex-wrap gap-5">
+        <div class="flex-auto">
+            <p-chip label="Gabriel Lourenção" image="./assets/images/Gabriel.jpeg" alt="Avatar image"
+                (click)="redirectTo('https://gabrielvlourencao.github.io/gabriel-lourencao.github.io/')" />
+        </div>
+        <div class="flex-auto">
+            <p-chip label="Linkedin" icon="pi pi-linkedin"
+                (click)="redirectTo('https://www.linkedin.com/in/gabriel-louren%C3%A7%C3%A3o/')" />
+        </div>
+        <div class="flex-auto">
+            <p-chip label="Github" icon="pi pi-github" (click)="redirectTo('https://github.com/gabrielvlourencao')" />
+        </div>
+    </div>
 </footer>
 
 <p-toast />
