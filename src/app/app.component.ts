@@ -31,6 +31,13 @@ export class AppComponent {
         command: () => {
           this.router.navigate(['/budget']);
         }
+      },
+      {
+        label: 'Sugestão',
+        icon: 'pi pi-info-circle',
+        command: () => {
+          this.router.navigate(['/suggestion']);
+        }
       }
     ];
   }

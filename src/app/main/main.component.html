@@ -2,17 +2,24 @@
     <div class="heading">
         <h1 class="title text-4xl font-extrabold leading-none tracking-tight">Crie um orçamento rápido e fácil!</h1>
     </div>
+    <div class="mt-8">
+        <div class="btn-large">
+            <p-button [fluid]="true" class="btn-large" label="Começe já!" [raised]="true" [rounded]="true"
+                severity="danger" size="large" [routerLink]="['/budget']" />
+        </div>
+    </div>
     <div class="content flex-wrap gap-8 flex mt-8">
         <div class="flex-auto">
-            <p-button label="Começe já!" [rounded]="true" severity="danger" size="large" [routerLink]="['/budget']" />
-        </div>
-        <div class="flex-auto">
-            <p-button label="Buy me a coffe!" [rounded]="true" severity="help" size="large"
+            <p-button label="Buy me a coffe!" [raised]="true" [rounded]="true" severity="help" size="small"
                 (click)="handlePaymentDialog()" />
         </div>
         <div class="flex-auto">
-            <p-button label="Sobre mim!" [rounded]="true" severity="info" size="large"
+            <p-button label="Sobre mim!" [raised]="true" [rounded]="true" severity="info" size="small"
                 (click)="redirectTo('https://gabrielvlourencao.github.io/gabriel-lourencao.github.io/')" />
+        </div>
+        <div class="flex-auto">
+            <p-button label="Deixe sua sugestão!" [raised]="true" [rounded]="true" severity="contrast" size="small"
+                [routerLink]="['/suggestion']" />
         </div>
     </div>
 </div>

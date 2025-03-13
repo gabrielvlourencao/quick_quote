@@ -1,8 +1,8 @@
-<form [formGroup]="quoteForm" (ngSubmit)="submitForm()">
+<form [formGroup]="quoteForm">
     <div class="flex flex-wrap gap-4 mt-4">
         <div class="flex-auto">
             <span class="block mb-2">Informe seu nome</span>
-            <input type="text" pInputText id="name" formControlName="name" placeholder="Digite seu nome"
+            <input [fluid]="true" type="text" pInputText id="name" formControlName="name" placeholder="Digite seu nome"
                 class="w-full" />
             <small *ngIf="quoteForm.controls['name'].invalid && quoteForm.controls['name'].touched"
                 class="text-red-500">
@@ -12,8 +12,8 @@
 
         <div class="flex-auto">
             <span class="block mb-2">Informe seu email</span>
-            <input type="email" pInputText id="email" formControlName="email" placeholder="Digite seu e-mail"
-                class="w-full" />
+            <input [fluid]="true" type="email" pInputText id="email" formControlName="email"
+                placeholder="Digite seu e-mail" class="w-full" />
             <small *ngIf="quoteForm.controls['email'].invalid && quoteForm.controls['email'].touched"
                 class="text-red-500">
                 E-mail inválido.
@@ -28,8 +28,8 @@
 
         <div class="flex-auto">
             <span class="block mb-2">Informe o contratante</span>
-            <input type="text" pInputText id="customer" formControlName="customer" placeholder="Digite seu nome"
-                class="w-full" />
+            <input [fluid]="true" type="text" pInputText id="customer" formControlName="customer"
+                placeholder="Digite seu nome" class="w-full" />
             <small *ngIf="quoteForm.controls['customer'].invalid && quoteForm.controls['customer'].touched"
                 class="text-red-500">
                 Contratante obrigatório
@@ -38,7 +38,7 @@
 
         <div class="flex-auto">
             <span class="block mb-2">Serviço</span>
-            <input type="email" pInputText id="service" formControlName="service"
+            <input [fluid]="true" pInputText id="service" formControlName="service"
                 placeholder="Digite o serviço prestado" class="w-full" />
         </div>
     </div>
@@ -46,7 +46,20 @@
     <div class="flex flex-wrap gap-4 mt-4">
         <div class="flex-auto">
             <span class="block mb-2">Descrição do serviço</span>
-            <p-editor formControlName="description" [style]="{ height: '320px' }" />
+            <p-editor formControlName="description" [style]="{ height: '320px' }">
+                <ng-template #header>
+                    <select class="ql-font">
+                    </select>
+                    <select class="ql-size">
+                    </select>
+                    <span class="ql-formats">
+                        <button type="button" class="ql-heading" aria-label="Heading"></button>
+                        <button type="button" class="ql-bold" aria-label="Bold"></button>
+                        <button type="button" class="ql-italic" aria-label="Italic"></button>
+                        <button type="button" class="ql-underline" aria-label="Underline"></button>
+                    </span>
+                </ng-template>
+            </p-editor>
             <small *ngIf="quoteForm.controls['description'].invalid && quoteForm.controls['description'].touched"
                 class="text-red-500">
                 A descrição deve ter pelo menos 10 caracteres.
@@ -56,8 +69,8 @@
     <div class="flex flex-wrap gap-4 mt-4">
         <div class="flex-auto">
             <span class="block mb-2">Valor estimado</span>
-            <p-inputNumber id="estimatedValue" formControlName="estimatedValue" mode="currency" currency="BRL"
-                locale="pt-BR" class="w-full" />
+            <p-inputNumber [fluid]="true" id="estimatedValue" formControlName="estimatedValue" mode="currency"
+                currency="BRL" locale="pt-BR" class="w-full" />
             <small *ngIf="quoteForm.controls['estimatedValue'].invalid && quoteForm.controls['estimatedValue'].touched"
                 class="text-red-500">
                 Informe um valor estimado.
@@ -65,18 +78,19 @@
         </div>
         <div class="flex-auto">
             <span class="block mb-2">Observações (Se houver)</span>
-            <input type="text" pInputText id="complement" formControlName="complement" class="w-full" />
+            <input [fluid]="true" type="text" pInputText id="complement" formControlName="complement" class="w-full" />
         </div>
     </div>
 
     <div class="col-12 text-end mt-4">
-        <p-button label="Emitir Orçamento" icon="pi pi-check" class="p-button-success" [disabled]="generatingQuote" (onClick)="submitForm()"></p-button>
+        <p-button label="Emitir Orçamento" icon="pi pi-check" class="p-button-success" [disabled]="generatingQuote"
+            (onClick)="submitForm()"></p-button>
     </div>
 </form>
 
 <p-toast />
 
 @if (generatingQuote) {
-    <app-loading-full-screen [message]="'Gerando orçamento...'"></app-loading-full-screen>
-    <app-ads></app-ads>
+<app-loading-full-screen [message]="'Gerando orçamento...'"></app-loading-full-screen>
+<app-ads></app-ads>
 }

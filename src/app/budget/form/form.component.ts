@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SaasUtilsService } from '../../../services/saas-utils.service';
 import { GenerateQuoteRequest } from '../../../services/models/generate-quote-request';
@@ -13,14 +13,12 @@ import { finalize } from 'rxjs';
   styleUrls: ['./form.component.scss'],
   standalone: false
 })
-export class FormComponent implements OnInit {
+export class FormComponent {
   quoteForm!: FormGroup;
   generatingQuote: boolean = false;
 
 
-  constructor(private fb: FormBuilder, private sassService: SaasUtilsService, private messageService: MessageService) { }
-
-  ngOnInit(): void {
+  constructor(private fb: FormBuilder, private sassService: SaasUtilsService, private messageService: MessageService) {
     this.buildForm();
   }
 
@@ -61,11 +59,11 @@ export class FormComponent implements OnInit {
     return request;
   }
 
-  showAdsToContinue(){
+  showAdsToContinue() {
     this.generatingQuote = true;
     setTimeout(() => {
       this.generateQuote();
-    }, 10000);
+    }, 1000);
   }
 
   generateQuote() {
