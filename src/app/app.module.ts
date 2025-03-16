@@ -30,6 +30,8 @@ import { AdsComponent } from './shared/ads/ads.component';
 import { BudgetComponent } from './budget/budget.component';
 import { MainComponent } from './main/main.component';
 import { DialogModule } from 'primeng/dialog';
+import { FloatLabelModule } from 'primeng/floatlabel';
+import { SuggestionComponent } from './suggestion/suggestion.component';
 
 const preset = definePreset(Aura, {
   semantic: {
@@ -56,7 +58,8 @@ const preset = definePreset(Aura, {
     LoadingFullScreenComponent,
     AdsComponent,
     BudgetComponent,
-    MainComponent
+    MainComponent,
+    SuggestionComponent
   ],
   imports: [
     CommonModule,
@@ -79,6 +82,7 @@ const preset = definePreset(Aura, {
     ToastModule,
     ChipModule,
     DialogModule,
+    FloatLabelModule,
     HttpClientModule,
   ],
   providers: [
