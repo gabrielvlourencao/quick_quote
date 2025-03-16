@@ -1,5 +1,5 @@
 <div class="main">
-    <div class="flex flex-wrap">
+    <div class="flex flex-wrap mt-12">
         <h1 class="title text-4xl font-extrabold leading-none tracking-tight">Deixe sua sugestão de melhoria!</h1>
     </div>
     <form [formGroup]="suggestionForm" class="suggestion_Form">
@@ -16,20 +16,38 @@
         </div>
         <div class="flex flex-wrap mt-4">
             <div class="flex-auto">
+                <span class="block mb-2">Informe seu email</span>
+                <input [fluid]="true" type="email" pInputText formControlName="email" placeholder="Digite seu e-mail"
+                    class="w-full" />
+                <small *ngIf="suggestionForm.controls['email'].invalid && suggestionForm.controls['email'].touched"
+                    class="text-red-500">
+                    E-mail inválido.
+                </small>
+            </div>
+        </div>
+        <div class="flex flex-wrap mt-4">
+            <div class="flex-auto">
                 <span class="block mb-2">Melhoria sugerida!</span>
                 <p-float-label variant="in">
-                    <textarea [fluid]="true" rows="5" maxlength="400" cols="50" [autoResize]="true" pTextarea formControlName="suggestion"></textarea>
+                    <textarea [fluid]="true" rows="5" maxlength="400" cols="50" [autoResize]="true" pTextarea
+                        formControlName="suggestion"></textarea>
                     <label for="suggestion">Insira aqui sua sugestão!</label>
                 </p-float-label>
-                <small *ngIf="suggestionForm.controls['suggestion'].invalid && suggestionForm.controls['suggestion'].touched"
+                <small
+                    *ngIf="suggestionForm.controls['suggestion'].invalid && suggestionForm.controls['suggestion'].touched"
                     class="text-red-500">
                     Sugestão atingiu limite de caracteres ou não preenchida!
                 </small>
             </div>
         </div>
         <div class="mt-4">
-            <p-button [fluid]="true" label="Emitir Orçamento" icon="pi pi-check" class="p-button-success" (onClick)="submit()"></p-button>
+            <p-button [fluid]="true" label="Emitir Orçamento" icon="pi pi-check" class="p-button-success"
+                (onClick)="submit()"></p-button>
         </div>
     </form>
 </div>
 <p-toast />
+
+@if (sendingSuggestion) {
+<app-loading-full-screen [message]="'Enviando sugestão...'"></app-loading-full-screen>
+}
