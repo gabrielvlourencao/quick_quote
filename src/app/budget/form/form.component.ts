@@ -61,9 +61,7 @@ export class FormComponent {
 
   showAdsToContinue() {
     this.generatingQuote = true;
-    setTimeout(() => {
-      this.generateQuote();
-    }, 1000);
+    this.generateQuote();
   }
 
   generateQuote() {
