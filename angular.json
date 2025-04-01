@@ -24,6 +24,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "allowedCommonJsDependencies": ["adsbygoogle"],
             "outputPath": "dist/quick-quote",
             "index": "src/index.html",
             "browser": "src/main.ts",
